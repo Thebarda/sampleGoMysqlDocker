@@ -1,0 +1,25 @@
+version: "3"
+services:
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - ./seedDB.sql:/docker-entrypoint-initdb.d/seedDB.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: barda87
+      MYSQL_DATABASE: sample
+      MYSQL_USER: sampleUser
+      MYSQL_PASSWORD: barda87
+  go:
+    build:
+      context: .
+      args:
+        app_env: "development"
+    restart: always
+    volumes:
+      - ./:/backend/app
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mysql
+    environment:
+      GO_PORT: 8081
