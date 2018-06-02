@@ -1,13 +1,17 @@
 package dbConfig
 
-import "database/sql"
-import _ "github.com/go-sql-driver/mysql"
+import (
+	"../models"
+	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/mysql"
+)
 
 type Database struct {
 }
 
-func GetDb() (db *sql.DB) {
-	db, err := sql.Open("mysql", "root:barda87@tcp(mysql)/sample")
+func GetDb() (db *gorm.DB) {
+	db, err := gorm.Open("mysql", "root:barda87@tcp(mysql)/sample")
+	db.AutoMigrate(&models.User{})
 	if err != nil {
 		panic(err)
 	}

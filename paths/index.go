@@ -7,7 +7,7 @@ import (
 	"../requests"
 )
 
-func Index(w http.ResponseWriter, r *http.Request) {
+func User(w http.ResponseWriter, r *http.Request) {
 	users := requests.GetAllUsers()
 	jsonResult, _ := json.Marshal(users)
 	Render(jsonResult, w)

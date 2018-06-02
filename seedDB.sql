@@ -16,26 +16,26 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `user`
+-- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `user`;
+DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user` (
+CREATE TABLE `users` (
   `id` int(11) DEFAULT NULL,
   `firstname` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `users`
 --
 
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'tom'),(2,'jean'),(2,'jean'),(2,'jean'),(2,'jean'),(2,'jean'),(2332322,'tom'),(2332322,'tom'),(2332322,'tom'),(2332322,'tom'),(42,'un type'),(42,'un type'),(42,'un type'),(42,'un type'),(42,'un type'),(42,'un type'),(42,'un type'),(42,'un type'),(42,'un type'),(42,'un type'),(42,'un type'),(42,'un type');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'tom'),(2,'jean'),(2,'jean'),(2,'jean'),(2,'jean'),(2,'jean'),(2332322,'tom'),(2332322,'tom'),(2332322,'tom'),(2332322,'tom'),(42,'un type'),(42,'un type'),(42,'un type'),(42,'un type'),(42,'un type'),(42,'un type'),(42,'un type'),(42,'un type'),(42,'un type'),(42,'un type'),(42,'un type'),(42,'un type');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

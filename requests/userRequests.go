@@ -9,19 +9,14 @@ type UserRequests struct{}
 
 func GetAllUsers() []models.User {
 	db := dbConfig.GetDb()
-
-	rows, err := db.Query("SELECT * FROM user") // WHERE number = 13
-	if err != nil {
-		panic(err.Error()) // proper error handling instead of panic in your app
-	}
 	var users []models.User
-	for rows.Next() {
-		var u models.User
-		err = rows.Scan(&u.Id, &u.Firstname)
-		if err != nil {
-			panic(err)
-		}
-		users = append(users, u)
-	}
+	db.Find(&users)
 	return users
+}
+
+func Insert(user models.User) bool {
+	db := dbConfig.GetDb()
+	res := db.NewRecord(user)
+	db.Create(&user)
+	return res
 }
